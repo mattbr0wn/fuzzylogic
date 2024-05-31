@@ -8,15 +8,6 @@ def run_command(command):
     subprocess.run(command, shell=True, check=True)
 
 
-def mkdir_src():
-    if not os.path.exists("src"):
-        os.makedirs("src")
-
-
-def clone_repo():
-    run_command("git clone https://github.com/mattbr0wn/fuzzylogic.git src/fuzzylogic")
-
-
 def create_network():
     run_command("sudo docker network create fuzzylogic")
 
@@ -32,8 +23,6 @@ def deploy():
 
 
 if __name__ == "__main__":
-    mkdir_src()
-    clone_repo()
     create_network()
     copy_env()
     deploy()
