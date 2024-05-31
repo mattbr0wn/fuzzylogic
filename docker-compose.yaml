@@ -1,0 +1,17 @@
+services:
+  caddy:
+    container_name: caddy
+    build: .
+    restart: always
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    networks:
+      - fuzzylogic
+    ports:
+      - 80:80
+      - 443:443
+    env_file:
+      - caddy.env
+networks:
+  fuzzylogic:
+    external: true
