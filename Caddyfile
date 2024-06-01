@@ -1,6 +1,6 @@
 # Caddyfile.plausible 
 
-analytics.fuzzylogicmedia.com {
+stats.fuzzylogicmedia.com {
   reverse_proxy * Plausible:8000
   tls {
     dns cloudflare {env.CLOUDFLARE_API_TOKEN}
